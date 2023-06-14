@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  isCollapsed = true;
+
+  toggleCollapse() {
+    this.isCollapsed = !this.isCollapsed
+  }
   title = 'FrontEndToList';
 }

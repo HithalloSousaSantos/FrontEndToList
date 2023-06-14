@@ -13,7 +13,7 @@ export class HomeService {
   constructor(private http: HttpClient) {}
 
   obterDados(): Observable<any> {
-    let urlRequest = `${this.url}test`
+    let urlRequest = `${this.url}`
     return this.http.get<any>(encodeURI(urlRequest))
   }
 }

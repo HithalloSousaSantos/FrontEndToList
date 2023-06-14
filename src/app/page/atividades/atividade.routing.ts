@@ -3,6 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { AtividadeAndamentoComponent } from "./atividade-andamento/atividade-andamento.component";
 import { AtividadeConcluidaComponent } from "./atividade-concluida/atividade-concluida.component";
 import { AtividadeCadastroComponent } from "./atividade-cadastro/atividade-cadastro.component";
+import { AtividadeEditarComponent } from "./atividade-editar/atividade-editar.component";
 
 const routes: Routes = [
     {
@@ -11,7 +12,7 @@ const routes: Routes = [
     },
 
     {
-        path: 'concluido',
+        path: 'concluida',
         component: AtividadeConcluidaComponent
     },
 
@@ -19,6 +20,11 @@ const routes: Routes = [
         path: 'cadastro',
         component: AtividadeCadastroComponent
     },
+
+    {
+        path: 'andamento/editar/:id',
+        component: AtividadeEditarComponent
+    }
 ]
 
 @NgModule({

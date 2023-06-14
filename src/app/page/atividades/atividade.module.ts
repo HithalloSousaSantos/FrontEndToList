@@ -5,8 +5,10 @@ import { AtividadeCadastroComponent } from './atividade-cadastro/atividade-cadas
 import { AtividadeConcluidaComponent } from './atividade-concluida/atividade-concluida.component';
 import { AtividadeRoutingModule } from './atividade.routing';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserModule } from '@angular/platform-browser';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AtividadeService } from './atividade.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AtividadeEditarComponent } from './atividade-editar/atividade-editar.component';
 
 
 @NgModule({
@@ -14,14 +16,24 @@ import { BrowserModule } from '@angular/platform-browser';
     AtividadeAndamentoComponent,
     AtividadeCadastroComponent,
     AtividadeConcluidaComponent,
+    AtividadeEditarComponent,
   ],
   imports: [
     CommonModule,
     AtividadeRoutingModule,
     HttpClientModule,
-    BrowserModule,
+    NgbModule,
+    ReactiveFormsModule,
   ],
   exports: [
+    AtividadeAndamentoComponent,
+    AtividadeCadastroComponent,
+    AtividadeConcluidaComponent,
+  ],
+  providers: [
+    AtividadeService
+   ],
+  bootstrap: [
     AtividadeAndamentoComponent,
     AtividadeCadastroComponent,
     AtividadeConcluidaComponent,

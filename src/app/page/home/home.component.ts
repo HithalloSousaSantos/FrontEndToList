@@ -8,13 +8,20 @@ import { HomeService } from './home.service';
 })
 
 export class HomeComponent implements OnInit{
+  isCollapsed = true;
+
+  toggleCollapse() {
+    this.isCollapsed = !this.isCollapsed
+  }
+
+  obterDados: any[any];
   constructor(private homeService: HomeService) {}
 
   ngOnInit(): void {
     this.homeService.obterDados().subscribe(
-      response => (
-        console.log(response)
+      response => {
+        this.obterDados = response;
+      }
       )
-    )
   }
 }

@@ -1,1 +1,38 @@
-<router-outlet></router-outlet>
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+ 
+    <title>To Do List</title>
+  </head>
+  <body>
+
+    <div class="pos-f-t">
+      <div class="collapse" [ngbCollapse]="!isCollapsed" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
+          <a routerLink="/" class="text-white h5">Inicio</a> <br>
+          <a routerLink="/atividade/cadastro" class="text-white h5">Criar Atividades</a> <br>
+          <a routerLink="/atividade/concluida" class="text-white h5">Atividades Concluidas</a> <br> 
+          <a routerLink="/atividade/andamento" class="text-white h5">Atividades em Andamento</a>
+        </div>
+      </div>
+    
+      <nav class="navbar navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" (click)="toggleCollapse()" aria-controls="navbarToggleExternalContent" [attr.aria-expanded]="!isCollapsed" aria-label="Alterna navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+    </div>  
+    <router-outlet></router-outlet>
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
